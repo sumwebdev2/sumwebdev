@@ -1,74 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum Web Dev | Professional Digital Solutions</title>
+    <title>Sum Web Dev | Professional Digital Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .active-link { border-bottom: 2px solid #000; }
+    </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 font-sans">
 
-    <!-- Navigation -->
-    <nav class="flex justify-between items-center py-6 px-10 border-b border-gray-100">
-        <div class="text-2xl font-bold tracking-tighter">SUM WEB DEV</div>
-        <div class="flex gap-8 items-center">
-            <a href="/" class="hover:text-blue-600 transition-colors font-medium">Home</a>
-            <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
-            <select class="bg-gray-50 border p-2 rounded cursor-pointer">
-                <option>English</option>
-                <option>Dutch</option>
-                <option>French</option>
-                <option>Spanish</option>
-                <option>Portuguese</option>
-            </select>
+    <!-- Navbar -->
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-md z-50 py-6 px-8 flex justify-between items-center border-b border-gray-200">
+        <div class="text-2xl font-black tracking-tighter">SUM WEB DEV</div>
+        <div class="hidden md:flex gap-8 font-semibold uppercase text-sm tracking-widest">
+            <a href="/" class="hover:text-blue-600">Home</a>
+            <a href="/services/" class="hover:text-blue-600">Services</a>
+            <a href="/contact/" class="hover:text-blue-600">Contact</a>
         </div>
+        <select id="lang" class="bg-gray-100 p-2 rounded text-sm" onchange="switchLanguage()">
+            <option>English</option>
+            <option>Dutch</option>
+            <option>French</option>
+            <option>Spanish</option>
+            <option>Portuguese</option>
+        </select>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="py-24 px-10 text-center bg-gray-50">
-        <h1 class="text-6xl font-bold mb-6 tracking-tight">Not just some web dev. <br> <span class="text-blue-600">We are more.</span></h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">We build, grow, and maintain professional online presences for small businesses. Your partner for complete digital solutions.</p>
-        <a href="#services" class="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-all hover:scale-105">View Our Services</a>
+    <!-- Hero Section (High Impact) -->
+    <header class="py-24 md:py-32 px-8 text-center bg-gray-50">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Complete Digital Solutions</h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">We help small businesses build, grow, and maintain a professional online presence[cite: 1].</p>
+        <div class="flex gap-4 justify-center">
+            <a href="/services/" class="bg-black text-white px-8 py-4 uppercase font-bold hover:bg-blue-600 transition">View Our Services</a>
+        </div>
     </header>
 
-    <!-- Services Grid -->
-    <section id="services" class="py-20 px-10">
-        <h2 class="text-4xl font-bold text-center mb-16">Our Services</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Service Item -->
-            <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <h3 class="text-2xl font-bold mb-4">Web Development</h3>
-                <p class="text-gray-600 mb-6">Custom website development that builds trust and helps you stay visible online.</p>
-                <a href="/web-design/" class="text-blue-600 font-semibold hover:underline">Learn more →</a>
+    <!-- Content Section -->
+    <main class="py-20 px-8 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12">Why Choose Sum Web Dev?</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="border-t-4 border-black pt-6">
+                <h3 class="text-xl font-bold mb-3">Custom Development</h3>
+                <p class="text-gray-600">Modern, professional websites that build trust[cite: 1].</p>
             </div>
-            
-            <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <h3 class="text-2xl font-bold mb-4">Maintenance</h3>
-                <p class="text-gray-600 mb-6">Ongoing website hosting and maintenance to ensure your site is always running smoothly[cite: 1].</p>
-                <a href="/website-maintainance/" class="text-blue-600 font-semibold hover:underline">Learn more →</a>
+            <div class="border-t-4 border-black pt-6">
+                <h3 class="text-xl font-bold mb-3">SEO & Visibility</h3>
+                <p class="text-gray-600">Stay visible online with targeted growth strategies[cite: 1].</p>
             </div>
-
-            <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <h3 class="text-2xl font-bold mb-4">Digital Growth</h3>
-                <p class="text-gray-600 mb-6">Social media management, content creation, and Google Business Profile optimization[cite: 1].</p>
-                <a href="/seo-growth/" class="text-blue-600 font-semibold hover:underline">Learn more →</a>
+            <div class="border-t-4 border-black pt-6">
+                <h3 class="text-xl font-bold mb-3">Maintenance</h3>
+                <p class="text-gray-600">Ongoing support so you can focus on your business[cite: 1].</p>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="py-16 px-10 bg-gray-900 text-white">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div>
-                <h4 class="text-xl font-bold mb-4">Sum Web Dev</h4>
-                <p class="text-gray-400">Your trusted partner for complete digital growth[cite: 1].</p>
+    <footer class="bg-black text-white py-16 px-8">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <h4 class="text-2xl font-bold mb-4">SUM WEB DEV</h4>
+                <p class="text-gray-400">Your partner for complete digital growth[cite: 1].</p>
             </div>
-            <div class="flex justify-end gap-6">
-                <a href="#" class="hover:text-blue-400 transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-blue-400 transition-colors">Instagram</a>
+            <div>
+                <h5 class="font-bold mb-4 uppercase text-sm">Services</h5>
+                <ul class="text-gray-400 space-y-2 text-sm">
+                    <li><a href="/web-design/">Web Design</a></li>
+                    <li><a href="/seo-findability/">SEO Findability</a></li>
+                    <li><a href="/website-maintainance/">Maintenance</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4 uppercase text-sm">Legal</h5>
+                <ul class="text-gray-400 space-y-2 text-sm">
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-gray-800 flex justify-between text-gray-500 text-xs uppercase">
+            <p>&copy; 2026 Sum Web Dev</p>
+            <div class="flex gap-4">
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
             </div>
         </div>
     </footer>
 
+    <script>
+        function switchLanguage() {
+            // Production logic would redirect to /{lang}/index.html
+            const lang = document.getElementById('lang').value;
+            alert("Redirecting to " + lang + " version...");
+        }
+    </script>
 </body>
 </html>
