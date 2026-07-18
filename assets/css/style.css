@@ -1,0 +1,117 @@
+/* Shared CSS animations and utilities */
+:root {
+    --primary-blue: #0066cc;
+    --dark-navy: #001a4d;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Glass Morphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth Transitions */
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealAnimation 0.8s ease forwards;
+}
+
+@keyframes revealAnimation {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Animations */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-navy));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Soft Shadow */
+.shadow-soft {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-soft-lg {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 1.875rem;
+    }
+}
